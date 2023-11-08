@@ -3,8 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-const Selfintroduction = (props) =>{
-  return <p>My name is {props.name}</p>
+const Selfintroduction = ({name = "tor",firstname = "siriroj"}) =>{
+  return( 
+  <>
+        <p>My name is {name}</p>
+        <p>My Firstname is {firstname}</p>
+  </>
+  )
 };
 
 const Testcomponent = () =>{
@@ -36,7 +41,7 @@ function App() {
         <button type = "button" onClick={Testcomponent}>Click</button>
       </div>
 
-      <Selfintroduction name="Tor"></Selfintroduction>
+      <Selfintroduction name="chit" firstname = "anuchit"></Selfintroduction>
     </>
   )
 }
