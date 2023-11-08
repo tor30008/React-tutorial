@@ -42,6 +42,8 @@ function App() {
       </div>
 
       <Selfintroduction name="chit" firstname = "anuchit"></Selfintroduction>
+      <Selfintroduction name="tee" firstname="weerapat"></Selfintroduction>
+      <Selfintroduction></Selfintroduction>
     </>
   )
 }
