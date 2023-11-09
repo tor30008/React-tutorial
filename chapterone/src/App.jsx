@@ -3,12 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-const Selfintroduction = ({name = "tor",firstname = "siriroj",dateofBirth}) =>{
+const Selfintroduction = ({name = "tor",firstname = "siriroj",dateofBirth,hobbies = []}) =>{
   return( 
   <>
         <p>My name is {name}</p>
         <p>My Firstname is {firstname}</p>
-        {dateofBirth ? <p>My Birthday : {dateofBirth}</p> : null}
+        {dateofBirth ? <p>My Birthday : {dateofBirth}</p> : null} 
+        {hobbies.length === 0 ? null : <p>My hobbies are {hobbies && hobbies.join('-')}</p>}
+
+        {hobbies.map((data)=>{
+          <p>My hobbies List : {data}</p>
+        })} 
   </>
   )
 };
@@ -42,8 +47,8 @@ function App() {
         <button type = "button" onClick={Testcomponent}>Click</button>
       </div>
 
-      <Selfintroduction name="chit" firstname = "anuchit" dateofBirth="17 nov 1993"></Selfintroduction>
-      <Selfintroduction name="tee" firstname="weerapat"></Selfintroduction>
+      <Selfintroduction name="chit" firstname = "anuchit" dateofBirth="17 nov 1993" hobbies={["Badminton","BasketBall","Cartoon"]}></Selfintroduction>
+      <Selfintroduction name="tee" firstname="weerapat" hobbies={["กระหรี่"]}></Selfintroduction>
       <Selfintroduction dateofBirth="20 October 1993"></Selfintroduction>
     </>
   )
