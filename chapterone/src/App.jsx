@@ -21,8 +21,8 @@ const Selfintroduction = ({name = "tor",firstname = "siriroj",dateofBirth,hobbie
   )
 };
 
-const Testcomponent = () =>{
-  return alert('Tor');
+const Testcomponent = ({ children }) =>{
+  return <h3>{children}</h3>
 }
 
 function App() {
@@ -47,12 +47,13 @@ function App() {
       </div>
 
       <div>
-        <button type = "button" onClick={Testcomponent}>Click</button>
+        {/*<button type = "button" onClick={Testcomponent}>Click</button>*/}
       </div>
 
       <Selfintroduction name="chit" firstname = "anuchit" dateofBirth="17 nov 1993" hobbies={["Badminton","BasketBall","Cartoon"]}></Selfintroduction>
       <Selfintroduction name="tee" firstname="weerapat" hobbies={["กระหรี่"]}></Selfintroduction>
       <Selfintroduction dateofBirth="20 October 1993"></Selfintroduction>
+      <Testcomponent>Kuy</Testcomponent>
     </>
   )
 }
