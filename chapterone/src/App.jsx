@@ -9,11 +9,14 @@ const Selfintroduction = ({name = "tor",firstname = "siriroj",dateofBirth,hobbie
         <p>My name is {name}</p>
         <p>My Firstname is {firstname}</p>
         {dateofBirth ? <p>My Birthday : {dateofBirth}</p> : null} 
-        {hobbies.length === 0 ? null : <p>My hobbies are {hobbies && hobbies.join('-')}</p>}
-
-        {hobbies.map((data)=>{
-          <p>My hobbies List : {data}</p>
-        })} 
+        {hobbies.length === 0 ? null : //<p>My hobbies are {hobbies && hobbies.join('-')}</p>}
+      <div>
+        <h2>My HOBBIES ARE : </h2>
+        {hobbies.map((data,index) => (
+          <div key={index}>{index}  {data}</div>
+        ))}
+      </div>
+      }
   </>
   )
 };
