@@ -25,6 +25,10 @@ const Testcomponent = ({ children }) =>{
   return <h3>{children}</h3>
 }
 
+const Component_children = ({children}) =>{
+  return console.log(children);
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -54,6 +58,7 @@ function App() {
       <Selfintroduction name="tee" firstname="weerapat" hobbies={["กระหรี่"]}></Selfintroduction>
       <Selfintroduction dateofBirth="20 October 1993"></Selfintroduction>
       <Testcomponent>Kuy</Testcomponent>
+      <Component_children>สวัสดีครับ component_children</Component_children>
     </>
   )
 }
