@@ -15,7 +15,7 @@ import './App.css'
 const Selfintroduction = ({name = "tor",firstname = "siriroj",dateofBirth,hobbies = []}) =>{
   return( 
   <>
-        <p>My name is {name}</p>
+        <p>My name is <span style={{color : "red"}}>{name}</span></p>
         <p>My Firstname is {firstname}</p>
         {dateofBirth ? <p>My Birthday : {dateofBirth}</p> : null} 
         {hobbies.length === 0 ? null : //<p>My hobbies are {hobbies && hobbies.join('-')}</p>}
