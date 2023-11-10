@@ -1,8 +1,16 @@
-import { useState } from 'react'
+//@ts-check
+import React,{ useState } from 'react'
 import PropTypes from 'prop-types';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
+/**
+ * 
+ * @param {React.FC <{name : string} , {dateofBirth : string}> , {children : string}} 
+ * @returns {React.ReactNode}
+ */
+
 
 const Selfintroduction = ({name = "tor",firstname = "siriroj",dateofBirth,hobbies = []}) =>{
   return( 
@@ -31,7 +39,8 @@ const Testcomponent = ({ children }) =>{
 }
 
 const Component_children = ({children}) =>{
-  return console.log(children);
+  console.log(children);
+  return 0;
 }
 
 function App() {
@@ -61,9 +70,10 @@ function App() {
 
       <Selfintroduction name="chit" firstname = "anuchit" dateofBirth="17 nov 1993" hobbies={["Badminton","BasketBall","Cartoon"]}></Selfintroduction>
       <Selfintroduction name="tee" firstname="weerapat" hobbies={["กระหรี่"]}></Selfintroduction>
-      <Selfintroduction dateofBirth="20 October 1993"></Selfintroduction>
+      <Selfintroduction name = "tor" dateofBirth="20 October 1993"></Selfintroduction>
       <Testcomponent>Kuy</Testcomponent>
       <Component_children>สวัสดีครับ component_children</Component_children>
+      <Selfintroduction></Selfintroduction>
     </>
   )
 }
