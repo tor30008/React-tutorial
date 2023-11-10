@@ -35,9 +35,16 @@ const Component_children = ({children}) =>{
   return 0;
 }
 
-function App() {
-  const [count, setCount] = useState(0)
+const Savecomponent = ({name = "Testname_Savecomponet",game}) =>{
+  //alert("Savecomponet")
+  console.log(game);
+  return console.log(name);
+}
 
+function App() {
+  const [name,setName] = useState("");
+  const [game,setGame] = useState(""); 
+  //console.log(stage);
   return (
     <>
       <div>
@@ -64,8 +71,19 @@ function App() {
       <Selfintroduction name="tee" firstname="weerapat" hobbies={["กระหรี่"]}></Selfintroduction>
       <Selfintroduction name = "tor" dateofBirth="20 October 1993"></Selfintroduction>
       <Testcomponent>Kuy</Testcomponent>
-      <Component_children>สวัสดีครับ component_children</Component_children>
-      <Selfintroduction name = "testcolor" firstname = "Set Css Tag method React"></Selfintroduction>
+      {/*<Component_children name={name}>สวัสดีครับ component_children</Component_children>*/}
+
+      <div>
+          <label htmlFor="Testinput">Test Input Data : </label>
+          <input id="Testinput" name={name} value = {name} onChange ={ event =>{
+              setName(event.target.value),
+              setGame(event.target.value);
+              {Savecomponent({name},{game})};  
+            }
+          }></input>
+          {/*<Savecomponent name="Geng" firstname="saris"></Savecomponent>*/}
+      </div>
+      
     </>
   )
 }
