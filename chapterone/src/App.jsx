@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -20,6 +21,10 @@ const Selfintroduction = ({name = "tor",firstname = "siriroj",dateofBirth,hobbie
   </>
   )
 };
+
+Selfintroduction.propTypes = {
+  name : PropTypes.string.isRequired
+}
 
 const Testcomponent = ({ children }) =>{
   return <h3>{children}</h3>
